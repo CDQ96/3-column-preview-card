@@ -1,0 +1,163 @@
+body {
+    font-family: 'Lexend Deca', sans-serif; /* Primary text font */
+    background-color: #f0f0f0; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures rounded corners apply to all cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the whole container */
+}
+
+.card {
+    padding: 40px;
+    width: 280px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to the bottom */
+    color: rgba(255, 255, 255, 0.7); /* Lighter white for body text */
+}
+
+.card .icon {
+    margin-bottom: 25px;
+}
+
+.card .icon img {
+    width: 80px; /* Adjust as needed - this is roughly equivalent to 4em from before */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra space below image */
+}
+
+
+.card h2 {
+    font-family: 'Big Shoulders Display', cursive; /* Header font */
+    font-size: 2.5em;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 40px; /* Space between text and button */
+}
+
+.learn-more-btn {
+    background-color: white;
+    border: 2px solid white; /* White border for the button */
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Specific card styling */
+.sedans {
+    background-color: #e38826; /* Orange from the image */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sedans .learn-more-btn {
+    color: #e38826; /* Button text color matches card background */
+}
+
+.sedans .learn-more-btn:hover {
+    background-color: #e38826;
+    color: white;
+}
+
+.suvs {
+    background-color: #006970; /* Dark Teal from the image */
+}
+
+.suvs .learn-more-btn {
+    color: #006970;
+}
+
+.suvs .learn-more-btn:hover {
+    background-color: #006970;
+    color: white;
+}
+
+.luxury {
+    background-color: #004241; /* Very Dark Cyan from the image */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.luxury .learn-more-btn {
+    color: #004241;
+}
+
+.luxury .learn-more-btn:hover {
+    background-color: #004241;
+    color: white;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    body {
+        /* On mobile, allow the cards to stretch more, and potentially
+           add some padding to the body itself if the design requires
+           space around the stacked cards. */
+        padding: 40px 0; /* Add vertical padding for the overall container if needed */
+        align-items: flex-start; /* Align cards to the top in column layout */
+    }
+
+    .card-container {
+        flex-direction: column;
+        width: 90%; /* Occupy a good portion of the screen width */
+        max-width: 375px; /* Limit max width for very large phones/small tablets */
+        box-shadow: none; /* Remove container shadow if individual cards have it */
+    }
+
+    .card {
+        width: auto; /* Allow cards to take full width of their container */
+        padding: 40px; /* Keep padding consistent or adjust if needed */
+        border-radius: 0; /* Reset individual card radius for stacking */
+    }
+
+    /* Adjust border-radius for the top and bottom cards when stacked */
+    .sedans {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+
+    .luxury {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 0;
+    }
+
+    /* Specific adjustments for mobile view to match the screenshot */
+    .card .icon {
+        margin-bottom: 20px; /* Slightly adjust margin below icon */
+    }
+
+    .card h2 {
+        margin-bottom: 20px; /* Slightly adjust margin below heading */
+    }
+
+    .card p {
+        margin-bottom: 30px; /* Adjust spacing before button */
+    }
+
+    .learn-more-btn {
+        /* No specific changes needed for button size/padding unless you want it wider */
+        /* display: block; */ /* If you want the button to take full width */
+        /* width: fit-content; */ /* Keeps button width based on content */
+    }
+}
